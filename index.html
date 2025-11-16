@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>~</title>
+</head>
+
+<body>
+	<div class="main">
+		<div id="data-wrapper">
+            <div id="typed-strings">
+                <p>Placeholder text, <strong>HERE</strong></p>
+            </div>
+            <h1 id="typed"></h1>
+            <form id="searchbar" action="https://duckduckgo.com/" method="GET" autocomplete="off">
+                <input autofocus
+                    name="q"
+                    value=""
+                    type="search"
+                    placeholder="">
+            </form>
+			<nav>
+				<ul class="blue">
+                <li class="nav-title">| Pinned |</li>
+                <li><a href="https://gmail.com/">Gmail</a></li>
+                <li><a href="https://youtube.com">Youtube</a></li>
+                <li><a href="https://www.netflix.com/">Netlfix</a></li>
+                <li><a href="https://loldle.net/">Loldle</a></li>
+            </ul>
+            <ul class="red">
+                <li class="nav-title">| School |</li>
+                <li><a href="https://courses.uchicago.edu/">Canvas</a></li>
+                <li><a href="https://docs.google.com/document/u/0/">Docs</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/u/0/">Sheets</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/u/0/">Sheets</a></li>
+            </ul>
+            <ul class="green">
+                <li>| 4 Fun |</li>
+                <li><a href="https://archidekt.com/">Archidekt</a></li>
+                <li><a href="https://scryfall.com/">Scryfall</a></li>
+
+            </ul>
+            <ul class="purple">
+                <li class="nav-title">| Yaar! |</li>
+                <li><a href="https://old.reddit.com/r/Piracy/wiki/megathread">r/Piracy</a></li>
+                <li><a href="https://fmhy.net/">F.M.H.Y</a></li>
+                <li><a href="https://ext.to">Ext.to</a></li>
+                <li><a href="https://nyaa.si">Nyaa.si</a></li>
+            </ul>
+			</nav>
+			<div id="clock"></div>
+		</div>
+		<div id="slideshow">
+            <img></img>
+		</div>
+	</div>
+	<canvas id="canvas"></canvas>
+    <script>
+        $('document').ready(function(){
+            var typed = new Typed('#typed',{
+            stringsElement: "#typed-strings",
+            typeSpeed: 30,
+            backSpeed: 40,
+            })
+        });
+
+        function checkDoneTyping(){
+            if ($("#typed").html() == $("#typed-strings").html().trim().slice(3,-4)){
+                clearInterval(check);
+                console.log($("h1").get(0));
+                $("#typed").toggleClass('hidden-cursor', true);
+                setTimeout(() => {
+                    $("#searchbar").css("display", "flex");
+                    $("input").get(0).focus();
+                }, 200);
+            }
+        }
+
+        var check = setInterval(checkDoneTyping, 10);
+    </script>
+</body>
+<script src="script.js"></script>
+</html>
