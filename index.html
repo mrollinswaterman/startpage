@@ -16,7 +16,7 @@
             </div>
             <h1 id="typed"></h1>
             <form id="searchbar" action="https://duckduckgo.com/" method="GET" autocomplete="off">
-                <input autofocus
+                <input id="input"
                     name="q"
                     value=""
                     type="search"
@@ -66,20 +66,6 @@
             backSpeed: 40,
             })
         });
-
-        function checkDoneTyping(){
-            if ($("#typed").html() == $("#typed-strings").html().trim().slice(3,-4)){
-                clearInterval(check);
-                console.log($("h1").get(0));
-                $("#typed").toggleClass('hidden-cursor', true);
-                setTimeout(() => {
-                    $("#searchbar").css("display", "flex");
-                    $("input").get(0).focus();
-                }, 200);
-            }
-        }
-
-        var check = setInterval(checkDoneTyping, 10);
     </script>
 </body>
 <script src="script.js"></script>
