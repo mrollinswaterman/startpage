@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>New Tab</title>
+    <!--<link rel="icon" href="assets/favico.gif" type="image/gif" >-->
 	<meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -11,11 +12,8 @@
 
 <body>
 	<div class="main">
-		<div id="data-wrapper">
-            <div id="typed-strings">
-                <p>Placeholder text, <strong>HERE</strong></p>
-            </div>
-            <h1 id="typed"></h1>
+		<div id="data-wrapper" class="hidden">
+            <h1><q><i>I looked upon the sea, it was to be my <strong>grave.</strong></q></i></h1>
             <form id="searchbar" action="https://duckduckgo.com/" method="GET" autocomplete="off">
                 <input id="input"
                     name="q"
@@ -36,13 +34,12 @@
                 <li><a href="https://courses.uchicago.edu/">Canvas</a></li>
                 <li><a href="https://docs.google.com/document/u/0/">Docs</a></li>
                 <li><a href="https://docs.google.com/spreadsheets/u/0/">Sheets</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/u/0/">Sheets</a></li>
             </ul>
             <ul class="green">
-                <li>| 4 Fun |</li>
+                <li class="nav-title">| 4 Fun |</li>
                 <li><a href="https://archidekt.com/">Archidekt</a></li>
                 <li><a href="https://scryfall.com/">Scryfall</a></li>
-
+                <li><a href="https://anigo.to/">AniGo</a></li>
             </ul>
             <ul class="purple">
                 <li class="nav-title">| Yaar! |</li>
@@ -54,20 +51,8 @@
 			</nav>
 			<div id="clock"></div>
 		</div>
-		<div id="slideshow">
-            <img></img>
-		</div>
 	</div>
 	<canvas id="canvas"></canvas>
-    <script>
-        $('document').ready(function(){
-            var typed = new Typed('#typed',{
-            stringsElement: "#typed-strings",
-            typeSpeed: 30,
-            backSpeed: 40,
-            })
-        });
-    </script>
 </body>
 <script src="script.js"></script>
 </html>

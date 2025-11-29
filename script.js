@@ -1,4 +1,14 @@
 let clock = $("#clock");
+let input = $("#input");
+
+function isAlphaNumeric(code) {
+    if (!(code > 47 && code < 58) && // numeric (0-9)
+        !(code > 64 && code < 91) && // upper alpha (A-Z)
+        !(code > 96 && code < 123)) { // lower alpha (a-z)
+      return false;
+    }
+  return true;
+};
 
 function getTime() {
     let time = new Date();
@@ -12,50 +22,49 @@ function getTime() {
     clock.html(`${currentTime}&nbsp${currentDate}`);
 }
 
-function checkDoneTyping(){
-    if ($("#typed").html() == $("#typed-strings").html().trim().slice(3,-4)){
-        clearInterval(check);
-        $("#typed").toggleClass('hidden-cursor', true);
-        setTimeout(() => {
-            showSearchbar();
-        }, 200);
+function showSearchbar(key='') {
+    console.log(key);
+     // in input not focused and empty, focus it and add keypress to the value
+    if (!document.activeElement != input && input.val() == '') {
+        input.focus();
+        input.val(key);
+    }
+
+    // if input is hidden, show it
+    if ($("#data-wrapper").hasClass('hidden')){
+        $("#data-wrapper").toggleClass('hidden');
+        let checkEmpty = setInterval(() => {
+            if (input.val() == '') {
+                $("#data-wrapper").toggleClass('hidden');
+                clearInterval(checkEmpty);
+            }
+        }, 100);
     }
 }
 
-var check = setInterval(checkDoneTyping, 10);
-
-function randomImage() {
-    console.log("selecting random image");
-    var i = Math.floor(Math.random() * 3);
-    let img = $("img").get(0);
-    if (img.src.includes(i)) {
-        return randomImage();
+$("#data-wrapper").on('mouseover', () => {
+    if ($("#data-wrapper").hasClass('hidden')){
+        $("#data-wrapper").toggleClass('hidden');
     }
-    $("img").attr("src", `assets/${i}.jpg`);
-}
+});
 
-function searchbarHidden() {
-    return $("#searchbar").css("display") == 'none'
-}
+$("#data-wrapper").on('mouseleave', () => {
+    if (!$("#data-wrapper").hasClass('hidden')){
+        $("#data-wrapper").toggleClass('hidden');
+    }
+});
 
-function showSearchbar(key=null) {
-    if (searchbarHidden()) {
-        $("#searchbar").css("display", "flex");
-        $("input").get(0).focus();
-        if (key && key != "Meta") {
-            $("#input").val(key);
-        }
+document.body.onkeydown = function(e) {
+    if (isAlphaNumeric(e.code)){
+        showSearchbar(e.key);
+    } else {
+        showSearchbar();
     }
 
-}
-
-document.body.onkeyup = function(e) {
-    showSearchbar(e.key);
-    document.body.onkeyup = null;
 }
 
 function setup() {
-    randomImage();
+    input.focus();
     setInterval(getTime, 1000);
 }
 
