@@ -13,14 +13,8 @@ body {
   margin: 0;
   font-family: 'Iosevka';
   font-size: 20px;
-  /*background-color: #111111;*/
   overflow: hidden;
-  background:
-      linear-gradient(
-          rgba(0, 0, 0, 0.2), 
-          rgba(0, 0, 0, 0.2)
-        ),
-        url('assets/bg.png');
+  background: url('https://pub-3ee1572858344b48b0791aa229d44f2a.r2.dev/image.webp');
   background-size: cover;
   background-attachment: fixed;
   --background-opacity: 0.15;
@@ -65,33 +59,11 @@ h1 {
   padding-right:5px;
   margin-top: -40px;
   font-family: 'Tangerine', cursive;
-  /*-webkit-text-stroke: 1px black;*/
   text-shadow: -2px -2px  rgb(129, 129, 129);
-}
-
-/*h1::after{
-    content:"";
-    height: 40px;
-    width: 1px;
-    background-color: #FEFFFA;
-    display: inline-block;
-    position: relative;
-    top: 5px;
-    animation: blink infinite linear 0 infinite;
-}
-
-h1.hidden-cursor::after{
-    display:none;
-}*/
-
-@keyframes blink {
-    from {display: inline-block;}
-    to {display: none;}
 }
 
 nav {
   display: flex;
-  /*color: #999999;*/
   color: white;
   font-size: 20px;
   flex-direction: row;
@@ -128,7 +100,6 @@ ul>li:first-of-type {
 
 ul>li>a {
   text-decoration: none;
-  /*color: #858585;*/
   color: #cbcbcb9a;
   transition: color 0.8s;
 }
@@ -163,35 +134,9 @@ ul.purple:hover {
   cursor: default;
 }
 
-.mySlides {
-  position: absolute;
-  opacity: 0;
-}
-
-#flair {
-  color: #0972D6;
-}
-
 strong {
    color: #0972D6;
    /*letter-spacing: 15px;*/
-}
-
-.typed-cursor {
-    display: none !important;
-}
-
-#slideshow {
-  width: 300px;
-  height: 600px;
-  background: #1b1b1b center / cover no-repeat;
-}
-
-#slideshow img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 100%;
 }
 
 #clock {
@@ -200,15 +145,6 @@ strong {
   left: 0;
   padding: 8px;
   color: white;
-}
-
-#canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 form {
@@ -221,7 +157,6 @@ form {
 input {
   background-color: unset;
   font: 30px 'Iosevka';
-  /*color: #ebdbb2;*/
   color: white;
   width: 95%;
   border-top-style: hidden;
