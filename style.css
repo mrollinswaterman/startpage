@@ -5,7 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
+html {visibility:hidden;}
+
 body {
+  background-color: #111111;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,9 +17,8 @@ body {
   font-family: 'Iosevka';
   font-size: 20px;
   overflow: hidden;
-  background: url('https://pub-3ee1572858344b48b0791aa229d44f2a.r2.dev/norwegian-storm-tiny.avif');
   background-size: cover;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   --background-opacity: 0.15;
 }
 

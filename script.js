@@ -63,6 +63,10 @@ document.body.onkeydown = function(e) {
 
 }
 
+$(document).ready(function() {
+  document.getElementsByTagName("html")[0].style.visibility = "visible";
+});
+
 function setup() {
     input.focus();
     setInterval(getTime, 1000);
