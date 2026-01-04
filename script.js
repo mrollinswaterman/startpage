@@ -42,17 +42,17 @@ function showSearchbar(key='') {
     }
 }
 
-$("#data-wrapper").on('mouseover', () => {
-    if ($("#data-wrapper").hasClass('hidden')){
-        $("#data-wrapper").toggleClass('hidden');
-    }
-});
+// $("#data-wrapper").on('mouseover', () => {
+//     if ($("#data-wrapper").hasClass('hidden')){
+//         $("#data-wrapper").toggleClass('hidden');
+//     }
+// });
 
-$("#data-wrapper").on('mouseleave', () => {
-    if (!$("#data-wrapper").hasClass('hidden')){
-        $("#data-wrapper").toggleClass('hidden');
-    }
-});
+// $("#data-wrapper").on('mouseleave', () => {
+//     if (!$("#data-wrapper").hasClass('hidden')){
+//         $("#data-wrapper").toggleClass('hidden');
+//     }
+// });
 
 document.body.onkeydown = function(e) {
     if (isAlphaNumeric(e.code)){
