@@ -45,12 +45,22 @@
 
 @font-face {
     font-family: 'Block';
-    src: url(assets/Block.otf);
+    src: url('assets/Block.otf');
+}
+
+@font-face {
+    font-family: 'Crude';
+    src: url('assets/Crude.otf');
 }
 
 @font-face {
     font-family: 'Marvin Visions';
     src: url(assets/MarvinVisionsBig-Bold.otf);
+}
+
+@font-face {
+    font-family: 'Credils';
+    src: url(assets/CredilsRegular.woff);
 }
 
 
@@ -83,23 +93,36 @@ body {
   flex-direction: column;
 }
 
+.data-wrapper {
+    display: flex;
+}
+
 h1 {
   color: white;
   font-family: 'Block';
-  font-size: 25vw;
+  font-size: 12.6vw;
   font-style: italic;
   margin: auto 0 0 0;
-  text-transform: uppercase;
-  padding: 3px;
+  text-transform: capitalize;
+  padding: 0 14px 0 14px;
+  font-weight: normal !important;
 }
+
+strong {
+   color: #ed3434;
+   /* letter-spacing: 15px; */
+   font-weight: normal;
+}
+
 
 h2 {
     color: white;
     font-family: '0Arame Thin';
-    font-size: 12px !important;
-    top: 52%;
-    left: 0px;
-    padding: 0 0 0 17px;
+    font-size: 13px !important;
+    padding: 0 0 0 14px;
+    position: relative;
+    top: -25px;
+    margin:0;
 }
 
 nav {
@@ -250,11 +273,6 @@ li {
     width: calc(1.5 * var(--circle-size));
     top: calc(-1 * var(--circle-size));
     left: calc(0.5 * var(--circle-size));
-}
-
-strong {
-   color: #ed3434;
-   /* letter-spacing: 15px; */
 }
 
 form {

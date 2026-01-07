@@ -42,33 +42,6 @@ function showSearchbar(key='') {
     }
 }
 
-$("nav").first().on('mouseover', () => {
-    if ($("nav").first().hasClass('hidden')) {
-        $("nav").first().toggleClass('hidden');
-        $(".nav-backdrop").first().toggleClass('hidden');
-
-    }
-})
-
-$("nav").first().on('mouseleave', () => {
-    if (!$("nav").first().hasClass('hidden')) {
-        $("nav").first().toggleClass('hidden');
-        $(".nav-backdrop").first().toggleClass('hidden');
-    }
-})
-
-// $("#data-wrapper").on('mouseover', () => {
-//     if ($("#data-wrapper").hasClass('hidden')){
-//         $("#data-wrapper").toggleClass('hidden');
-//     }
-// });
-
-// $("#data-wrapper").on('mouseleave', () => {
-//     if (!$("#data-wrapper").hasClass('hidden')){
-//         $("#data-wrapper").toggleClass('hidden');
-//     }
-// });
-
 document.body.onkeydown = function(e) {
     if (isAlphaNumeric(e.code)){
         showSearchbar(e.key);
